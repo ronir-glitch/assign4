@@ -37,4 +37,6 @@ with tabs[3]:
         value=f"${overall_average:,.2f}"
     )
 
-    st.bar_chart(Average["Close"])
+  st.bar_chart(
+    pd.DataFrame({"Average Closing Price": [overall_average]})
+)
