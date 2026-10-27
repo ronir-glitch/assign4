@@ -29,4 +29,4 @@ with tabs[2]:
 # Tab 4: Average Closing Price per Month
 with tabs[3]:
     st.subheader(f"AVG Closing Price for MSFT")
-    st.bar_chart(df Average['Close'])
+    st.bar_chart(df, Average['Close'])
