@@ -30,13 +30,18 @@ with tabs[2]:
 with tabs[3]:
     st.subheader("Average Closing Price for MSFT")
 
+    # Calculate the overall average closing price
     overall_average = Average["Close"].mean()
 
+    # Display the overall average
     st.metric(
         label="Overall Average Closing Price",
         value=f"${overall_average:,.2f}"
     )
 
-  st.bar_chart(
-    pd.DataFrame({"Average Closing Price": [overall_average]})
-)
+    # Display a bar chart showing the average
+    average_chart = pd.DataFrame({
+        "Average Closing Price": [overall_average]
+    })
+
+    st.bar_chart(average_chart)
