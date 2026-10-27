@@ -26,7 +26,15 @@ with tabs[2]:
     st.subheader(f"Volume for MSFT")
     st.bar_chart(df['Volume'])
     
-# Tab 4: Average Closing Price per Month
+# Tab 4: Average Closing Price 
 with tabs[3]:
-    st.subheader(f"AVG Closing Price for MSFT")
-    st.bar_chart(df, Average['Close'])
+    st.subheader("Average Closing Price for MSFT")
+
+    overall_average = Average["Close"].mean()
+
+    st.metric(
+        label="Overall Average Closing Price",
+        value=f"${overall_average:,.2f}"
+    )
+
+    st.bar_chart(Average["Close"])
